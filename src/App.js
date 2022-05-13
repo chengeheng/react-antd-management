@@ -1,8 +1,25 @@
 import logo from "./logo.svg";
 import "./App.less";
 import { Button } from "antd";
+import { useEffect } from "react";
+
+const getTheme = (color) => {
+  window.less
+    .modifyVars({
+      "@primary-color": color,
+      "@layout-header-padding": "0px",
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
 
 function App() {
+  useEffect(() => {
+    setTimeout(() => {
+      getTheme("#61dafb");
+    }, 5000);
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
