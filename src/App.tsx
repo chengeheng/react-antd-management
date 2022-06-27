@@ -1,8 +1,13 @@
 import React from "react";
-import "./App.css";
+import { useRoutes } from "react-router-dom";
+
+import { mainRoute } from "./route";
+
+import styles from "./App.less";
 
 const App: React.FC = () => {
-	return <div>App</div>;
+	const mainElement = useRoutes(mainRoute);
+	return <div className={styles.main}>{mainElement}</div>;
 };
 
 export default App;
